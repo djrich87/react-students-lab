@@ -1,18 +1,17 @@
-//Code the `<Student>` component as a function component that:
- //Renders the student's `name` & `bio` properties
- //Renders a `<Score>` component for each score object in the student's `scores` property.
-
-import Bio from "./Bio";
-import Name from "./Name";
-import Score from "./Score";
 
 
 const Student = (props) => {
+  console.log(props.student, 'inherited from parent component')
   return(
     <div>
-      <Bio />
-      <Name />
-      <Score />
+      <h1>{props.student.name}</h1>
+      <p>{props.student.bio}</p>
+      {props.student.scores.map((score, idx) => (
+        <div>
+          <p>{score.date}</p>
+          <p>{score.score}</p>
+        </div>
+      ))}
     </div>
   );
 }
