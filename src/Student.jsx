@@ -7,7 +7,7 @@ const Student = (props) => {
       <h1>{props.student.name}</h1>
       <p>{props.student.bio}</p>
       {props.student.scores.map((score, idx) => (
-        <div>
+        <div key={idx}>
           <p>{score.date}</p>
           <p>{score.score}</p>
         </div>
